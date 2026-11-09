@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#dde9fb">
+  <title>Local Lab · 현지인처럼 여행하기</title>
+  <meta name="description" content="Local Lab은 현지인이 직접 고른 장소와 루트로 도시를 여행하는 법을 안내하는 여행 가이드입니다.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='9' fill='%235b1236'/><circle cx='16' cy='14' r='6' fill='%23fff6c7'/><path d='M4 26 L12 18 L18 23 L23 19 L28 26Z' fill='%23e9c9ff'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="nav-wrap">
+  <nav class="nav">
+    <a class="logo" href="#top" aria-label="Local Lab 홈">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="14" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M16 2 C9 10 9 22 16 30 M16 2 C23 10 23 22 16 30 M3 12 H29 M3 20 H29" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+      Local Lab
+    </a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="menu" aria-label="메뉴 열기">
+      <span></span><span></span>
+    </button>
+    <ul class="menu" id="menu">
+      <li><a href="busan.html">부산 가이드</a></li>
+      <li><a href="map.html">가이드맵</a></li>
+      <li><a href="#destinations">여행지</a></li>
+      <li><a href="#budget">예산</a></li>
+      <li><a href="#plan" class="pill">여행 상담</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- 1. HERO -->
+  <section class="hero container split">
+    <div class="split-a hero-left">
+      <div class="card hero-copy bg-cream">
+        <h1>Go<br>Local.</h1>
+        <p class="hero-sub">관광지 말고, 동네로.<br>현지인이 직접 고른 장소와 루트로<br>도시를 여행하는 법.</p>
+      </div>
+      <a href="#plan" class="card hero-cta bg-plum">여행 상담받기 <span aria-hidden="true">→</span></a>
+    </div>
+    <div class="split-b card hero-art bg-lilac">
+      <img class="photo" alt="얼굴을 맞대고 환하게 웃는 두 여행자" src="assets/hero.avif" fetchpriority="high">
+      <div class="hero-badge">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.5" fill="currentColor"/></svg>
+        <span><b>2,418곳</b><br>이번 달 현지인이 추천한 장소</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. WHY -->
+  <section class="container">
+    <div class="card bg-white why">
+      <h2>왜 Local Lab인가요</h2>
+      <p class="why-lines"><b>여행자 10명 중 7명</b>은 "유명한 곳은 너무 붐볐다"고 말해요.<br><b>그래서 우리는</b> 그 동네에 사는 사람에게 직접 물어요.</p>
+      <ul class="why-cards" aria-label="여행자들이 겪는 문제">
+        <li class="bg-cream"><b>너무 붐비는<br>명소</b><span>사진 한 장에 30분 줄 서기</span></li>
+        <li class="bg-lilac"><b>다 똑같은<br>코스</b><span>검색 상위 열 곳을 도는 여행</span></li>
+        <li class="bg-plum"><b>숨어 있는<br>동네 가게</b><span>현지인 단골집은 검색에 안 나와요</span></li>
+        <li class="bg-sky"><b>낯선 길과<br>말</b><span>물어볼 사람이 없는 골목</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 3. PLAN (참여 폼) -->
+  <section class="container" id="plan">
+    <div class="card bg-plum plan split">
+      <h2 class="plan-title split-a">나만의<br>여행<br>만들기</h2>
+      <form class="card bg-lilac plan-form split-b" id="contact-form" novalidate>
+        <h3>어떤 루트가 필요하세요?</h3>
+        <p>큐레이터가 이틀 안에 루트 초안을 보내드려요.</p>
+        <fieldset>
+          <legend class="sr-only">루트 종류</legend>
+          <label><input type="checkbox" name="type" value="day"> <b>당일</b> 동네 하나를 깊게 걷는 하루 코스</label>
+          <label><input type="checkbox" name="type" value="short"> <b>1박 2일</b> 가까운 동네 두 곳을 잇는 코스</label>
+          <label><input type="checkbox" name="type" value="long"> <b>2박 3일</b> 도시 전체를 권역별로 나눈 코스</label>
+          <label><input type="checkbox" name="type" value="custom"> <b>맞춤</b> 일정과 취향을 상담해서 설계</label>
+        </fieldset>
+        <div class="row">
+          <label class="field">가고 싶은 곳 *<input type="text" name="dest" required placeholder="예: 부산" autocomplete="off"></label>
+          <label class="field">이름<input type="text" name="name" autocomplete="name"></label>
+        </div>
+        <div class="row">
+          <label class="field">이메일 *<input type="email" name="email" required placeholder="you@example.com" autocomplete="email" inputmode="email"></label>
+          <label class="field">연락처<input type="tel" name="phone" autocomplete="tel" inputmode="tel"></label>
+        </div>
+        <button type="submit" class="btn-plum">루트 받아보기</button>
+        <p class="form-msg" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- 4. NUMBERS -->
+  <section class="container">
+    <div class="card bg-white why">
+      <div class="why-head">
+        <h2>숫자로 보는 Local Lab</h2>
+        <p class="muted">현지 큐레이터와 여행자가 함께 만든 기록이에요.</p>
+      </div>
+      <div class="stats" role="list">
+        <div class="stat bg-sky h1" role="listitem"><strong data-count="128">128</strong><span>큐레이터가 활동 중인 도시</span></div>
+        <div class="stat bg-lilac h2" role="listitem"><strong data-count="2400" data-suffix="+">2,400+</strong><span>검증된 동네 장소</span></div>
+        <div class="stat bg-plum h3" role="listitem"><strong data-count="36" data-suffix="K">36K</strong><span>함께 여행한 사람들</span></div>
+        <div class="stat bg-cream h4" role="listitem"><strong data-count="94" data-suffix="%">94%</strong><span>"다음 여행도 이렇게"</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. TESTIMONIAL -->
+  <section class="container">
+    <figure class="card quote-card bg-lilac">
+      <img class="photo" loading="lazy" alt="파라솔이 서 있는 광안리 해변과 멀리 보이는 광안대교"
+        src="https://images.unsplash.com/photo-1633839537302-3c195a4893be?w=1600&q=75&auto=format&fit=crop"
+        srcset="https://images.unsplash.com/photo-1633839537302-3c195a4893be?w=800&q=75&auto=format&fit=crop 800w,
+                https://images.unsplash.com/photo-1633839537302-3c195a4893be?w=1600&q=75&auto=format&fit=crop 1600w,
+                https://images.unsplash.com/photo-1633839537302-3c195a4893be?w=2400&q=75&auto=format&fit=crop 2400w"
+        sizes="100vw">
+      <blockquote class="quote bg-cream">
+        <p>"지도 앱엔 없는 골목 식당에서 할머니가 끓여준 국밥. 이번 여행에서 제일 오래 기억날 장면이에요."</p>
+        <figcaption>지은, 29 · 부산 1박 2일</figcaption>
+      </blockquote>
+    </figure>
+  </section>
+
+  <!-- 6. DESTINATIONS -->
+  <section class="container" id="destinations">
+    <div class="section-head">
+      <h2>이번 시즌 여행지</h2>
+      <div class="chips" role="group" aria-label="테마로 거르기">
+        <button class="chip is-on" data-filter="all">전체</button>
+        <button class="chip" data-filter="sea">바다</button>
+        <button class="chip" data-filter="city">도시</button>
+        <button class="chip" data-filter="food">미식</button>
+        <button class="chip" data-filter="nature">자연</button>
+      </div>
+    </div>
+    <div class="dest-grid">
+      <article class="card dest bg-sky wide" data-tags="sea food">
+        <div class="dest-top"><span class="tag">부산 · 한국</span><span class="days">2박 3일</span></div>
+        <h3>영도 골목과<br>새벽 어시장</h3>
+        <p>흰여울마을 계단길을 따라 내려가 해녀촌에서 늦은 아침을. 관광 지도에 없는 바다 쪽 카페 세 곳.</p>
+        <a href="busan.html" class="link-dark">부산 가이드 전체 보기 →</a>
+      </article>
+      <article class="card dest bg-cream" data-tags="nature sea">
+        <div class="dest-top"><span class="tag">제주 · 한국</span><span class="days">3박 4일</span></div>
+        <h3>동쪽 오름 걷기</h3>
+        <p>새벽 다랑쉬오름, 오후엔 종달리 동네 책방까지.</p>
+      </article>
+      <article class="card dest bg-lilac" data-tags="city food">
+        <div class="dest-top"><span class="tag">교토 · 일본</span><span class="days">3박 4일</span></div>
+        <h3>데마치야나기<br>아침 산책</h3>
+        <p>가모강 징검다리와 동네 빵집, 오래된 목욕탕.</p>
+      </article>
+      <article class="card dest bg-plum tall" data-tags="city">
+        <div class="dest-top"><span class="tag">리스본 · 포르투갈</span><span class="days">4박 5일</span></div>
+        <h3>언덕과 트램,<br>그리고 노을</h3>
+        <p>28번 트램 대신 걸어서 오르는 알파마. 동네 사람들이 저녁에 모이는 전망대 두 곳과 정어리 굽는 골목 식당.</p>
+        <a href="#plan" class="link-light">이 루트로 상담받기 →</a>
+      </article>
+      <article class="card dest bg-white" data-tags="food nature">
+        <div class="dest-top"><span class="tag">치앙마이 · 태국</span><span class="days">4박 5일</span></div>
+        <h3>님만해민 너머</h3>
+        <p>올드타운 일요 시장 다음 날, 산 아래 커피 농장으로.</p>
+      </article>
+      <article class="card dest bg-sky" data-tags="city food">
+        <div class="dest-top"><span class="tag">서울 · 한국</span><span class="days">1박 2일</span></div>
+        <h3>을지로에서<br>성수까지</h3>
+        <p>인쇄소 골목의 노포와 공장 건물 속 작업실들.</p>
+      </article>
+      <article class="card dest bg-cream wide" data-tags="sea nature">
+        <div class="dest-top"><span class="tag">다낭 · 베트남</span><span class="days">3박 4일</span></div>
+        <h3>호이안 말고 선짜 반도</h3>
+        <p>오토바이로 20분, 숲길 끝의 작은 해변. 해 질 녘엔 미케 해변의 동네 해산물 포장마차로.</p>
+      </article>
+    </div>
+    <p class="empty" hidden>이 테마의 여행지는 곧 추가돼요.</p>
+  </section>
+
+  <!-- 7. BUDGET -->
+  <section class="container" id="budget">
+    <div class="card bg-white budget">
+      <h2>여행 경비는 이렇게 나눠요</h2>
+      <p class="muted">4박 5일 기준, Local Lab 여행자 1,200명의 평균 지출 비율</p>
+      <div class="budget-bars">
+        <div class="bar bg-sky b1"><strong>40%</strong><b>숙소</b><span>동네 게스트하우스 · 레지던스</span></div>
+        <div class="bar bg-lilac b2"><strong>27%</strong><b>먹고 마시기</b><span>시장 · 노포 · 카페</span></div>
+        <div class="bar bg-cream b3"><strong>18%</strong><b>이동</b><span>대중교통 · 자전거</span></div>
+        <div class="bar bg-sky b4"><strong>15%</strong><b>체험</b><span>현지 클래스 · 입장료</span></div>
+      </div>
+      <div class="card bg-plum budget-total">
+        <span>1인 평균 <b>약 118만 원</b> <small>(항공 제외)</small></span>
+        <div class="btn-pair">
+          <a href="busan.html#planner" class="pill pill-cream">코스 추천기 열기</a>
+          <a href="#plan" class="pill pill-outline">예산 상담하기</a>
+        </div>
+      </div>
+      <ul class="trust">
+        <li>★ 큐레이터가 직접 다녀온 장소만 소개해요</li>
+        <li>날씨 정보 · Open-Meteo</li>
+        <li>관광 정보 참고 · 비짓부산</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 8. CLOSING -->
+  <section class="container">
+    <div class="card closing">
+      <img class="photo closing-photo" loading="lazy" alt="해 질 무렵 바다 위로 이어지는 부산 광안대교"
+        src="https://images.unsplash.com/photo-1702040093537-b8c34eaa0f5c?w=1600&q=75&auto=format&fit=crop"
+        srcset="https://images.unsplash.com/photo-1702040093537-b8c34eaa0f5c?w=800&q=75&auto=format&fit=crop 800w,
+                https://images.unsplash.com/photo-1702040093537-b8c34eaa0f5c?w=1600&q=75&auto=format&fit=crop 1600w,
+                https://images.unsplash.com/photo-1702040093537-b8c34eaa0f5c?w=2400&q=75&auto=format&fit=crop 2400w"
+        sizes="100vw">
+      <div class="closing-in split">
+        <h2 class="split-a">모든 여행은<br>동네에서<br>시작돼요</h2>
+        <div class="closing-cols split-b">
+          <div>
+            <b>궁금한 점이 있나요?</b>
+            <p>메일 hello@local-lab.app</p>
+            <p>평일 10:00 – 18:00</p>
+          </div>
+          <div>
+            <b>함께하는 다른 방법</b>
+            <p>우리 동네 큐레이터 지원하기</p>
+            <p>숨은 장소 제보하기</p>
+            <p>여행 후기 남기기</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- 9. FOOTER -->
+<footer class="site-footer">
+  <div class="container footer-top">
+    <a class="logo logo-xl" href="#top">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="14" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M16 2 C9 10 9 22 16 30 M16 2 C23 10 23 22 16 30 M3 12 H29 M3 20 H29" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+      Local Lab
+    </a>
+    <a href="#plan" class="pill pill-cream pill-lg">여행 상담</a>
+  </div>
+  <div class="container footer-cols">
+    <div><b>둘러보기</b><a href="busan.html">부산 가이드</a><a href="#destinations">여행지</a><a href="#budget">예산</a></div>
+    <div><b>연락</b><span>hello@local-lab.app</span><span>관광 안내 1330</span></div>
+    <div><b>Local Lab</b><span>현지인처럼 여행하는 법을 연구합니다.</span></div>
+    <div class="footer-copy"><span>© 2026 Local Lab</span><span>local-lab.app</span><span>사진 · Unsplash</span></div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

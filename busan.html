@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#dde9fb">
+  <title>부산 가이드 · Local Lab</title>
+  <meta name="description" content="골목, 야경, 미식, 바다, 역사. Local Lab이 정리한 부산 여행 가이드와 날씨·교통·코스 추천 도구.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='9' fill='%235b1236'/><circle cx='16' cy='14' r='6' fill='%23fff6c7'/><path d='M4 26 L12 18 L18 23 L23 19 L28 26Z' fill='%23e9c9ff'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="nav-wrap">
+  <nav class="nav">
+    <a class="logo" href="index.html" aria-label="Local Lab 홈">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="14" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M16 2 C9 10 9 22 16 30 M16 2 C23 10 23 22 16 30 M3 12 H29 M3 20 H29" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+      Local Lab
+    </a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="menu" aria-label="메뉴 열기">
+      <span></span><span></span>
+    </button>
+    <ul class="menu" id="menu">
+      <li><a href="map.html">가이드맵</a></li>
+      <li><a href="#tools">여행 도구</a></li>
+      <li><a href="#themes">테마 여행</a></li>
+      <li><a href="#festivals">축제</a></li>
+      <li><a href="#planner" class="pill">코스 추천</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero container split">
+    <div class="split-a hero-left">
+      <div class="card hero-copy bg-sky">
+        <p class="eyebrow">BUSAN GUIDE</p>
+        <h1 class="h1-ko">부산,<br>동네<br>부터.</h1>
+        <p class="hero-sub">바다만 보고 가기엔 아까운 도시.<br>골목, 노포, 언덕 위 마을까지<br>부산을 동네 단위로 여행하는 법.</p>
+      </div>
+      <a href="#planner" class="card hero-cta bg-plum">내 일정에 맞는 코스 받기 <span aria-hidden="true">→</span></a>
+    </div>
+    <div class="split-b card hero-art bg-lilac">
+      <img class="photo" alt="파스텔색 집들이 계단처럼 쌓인 부산의 언덕 마을"
+        src="https://images.unsplash.com/photo-1762440775708-7dbfe9e10842?w=1200&q=75&auto=format&fit=crop"
+        srcset="https://images.unsplash.com/photo-1762440775708-7dbfe9e10842?w=640&q=75&auto=format&fit=crop 640w,
+                https://images.unsplash.com/photo-1762440775708-7dbfe9e10842?w=1200&q=75&auto=format&fit=crop 1200w,
+                https://images.unsplash.com/photo-1762440775708-7dbfe9e10842?w=1800&q=75&auto=format&fit=crop 1800w"
+        sizes="(max-width: 719px) 100vw, 66vw" fetchpriority="high">
+      <div class="weather card bg-white" id="weather" aria-live="polite">
+        <span class="w-label">지금 부산 날씨</span>
+        <strong class="w-temp">--°</strong>
+        <span class="w-desc">불러오는 중…</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOOLS -->
+  <section class="container" id="tools">
+    <div class="section-head"><h2>여행 도구</h2><p class="muted">떠나기 전, 그리고 걷는 중에 바로 쓰는 링크 모음</p></div>
+    <div class="tools-grid">
+      <a class="card tool bg-white" href="https://www.humetro.busan.go.kr" target="_blank" rel="noopener">
+        <span class="ico" aria-hidden="true">🚇</span><b>지하철 노선·시간표</b><span>1~4호선, 동해선, 김해경전철 환승까지</span>
+      </a>
+      <a class="card tool bg-white" href="https://bus.busan.go.kr" target="_blank" rel="noopener">
+        <span class="ico" aria-hidden="true">🚌</span><b>버스 도착 정보</b><span>정류장별 실시간 도착 시간</span>
+      </a>
+      <a class="card tool bg-white" href="https://www.citytourbusan.com" target="_blank" rel="noopener">
+        <span class="ico" aria-hidden="true">🚍</span><b>부산시티투어 버스</b><span>부산역 출발 2층 버스, 노선별 순환</span>
+      </a>
+      <a class="card tool bg-cream" href="tel:1330">
+        <span class="ico" aria-hidden="true">☎️</span><b>관광 안내 1330</b><span>교통·숙소·통역 안내, 24시간</span>
+      </a>
+      <a class="card tool bg-white" href="#planner">
+        <span class="ico" aria-hidden="true">🧭</span><b>코스 추천기</b><span>테마와 기간만 고르면 하루 동선 완성</span>
+      </a>
+      <a class="card tool bg-white" href="https://www.visitbusan.net" target="_blank" rel="noopener">
+        <span class="ico" aria-hidden="true">📚</span><b>비짓부산 공식 포털</b><span>가이드북·지도 내려받기, 행사 공지</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- NOW -->
+  <section class="container">
+    <div class="card bg-white">
+      <div class="now-head">
+        <h2>지금 부산에 가면</h2>
+        <p class="muted">이번 시즌 Local Lab 큐레이터가 고른 다섯 가지</p>
+      </div>
+      <ol class="now-list">
+        <li><span class="n">1</span><div><b>동백섬 한 바퀴</b><p>해운대 해변 끝에서 이어지는 짧은 숲길. 누리마루 하우스와 등대 전망대를 지나 30~40분이면 충분해요.</p></div></li>
+        <li><span class="n">2</span><div><b>봉래산 야간 트레킹</b><p>영도 한가운데 솟은 산. 해 질 무렵 올라 정상에서 북항과 남항 불빛을 동시에 내려다봐요.</p></div></li>
+        <li><span class="n">3</span><div><b>전포 카페 골목</b><p>공구 상가 사이로 카페와 디저트 가게가 들어선 동네. 평일 오후가 가장 한산해요.</p></div></li>
+        <li><span class="n">4</span><div><b>청사포 다릿돌전망대</b><p>바다 위로 뻗은 유리 바닥 전망대. 해변열차나 스카이캡슐과 묶어 동선을 짜기 좋아요.</p></div></li>
+        <li><span class="n">5</span><div><b>대저생태공원 가을 억새·팜파스</b><p>낙동강변 넓은 공원. 바람 부는 날 오후 햇빛이 비스듬할 때가 가장 예뻐요.</p></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- THEMES -->
+  <section class="container" id="themes">
+    <div class="section-head">
+      <h2>테마별 추천</h2>
+      <div class="chips" role="tablist" aria-label="테마 선택" id="theme-tabs"></div>
+    </div>
+    <div class="theme-grid" id="theme-grid" role="tabpanel"></div>
+  </section>
+
+  <!-- POPULAR -->
+  <section class="container">
+    <div class="card bg-plum popular split">
+      <div>
+        <h2>많이 찾는<br>부산</h2>
+        <p class="pop-sub">처음 부산에 간다면 이 아홉 곳부터.<br>Local Lab 여행자들이 가장 많이 저장한 장소예요.</p>
+      </div>
+      <ol class="pop-list" id="pop-list"></ol>
+    </div>
+  </section>
+
+  <!-- FESTIVALS -->
+  <section class="container" id="festivals">
+    <div class="section-head"><h2>계절별 축제·행사</h2><p class="muted">정확한 날짜는 해마다 달라요. 떠나기 전 공식 공지를 꼭 확인하세요.</p></div>
+    <div class="fest-grid">
+      <article class="card bg-cream fest">
+        <span class="season">봄</span>
+        <ul>
+          <li><b>낙동강 유채꽃 축제</b><span>대저생태공원 일대가 노랗게 덮여요.</span></li>
+          <li><b>해운대 모래축제</b><span>해변 위에 커다란 모래 조각 작품이 들어서요.</span></li>
+        </ul>
+      </article>
+      <article class="card bg-sky fest">
+        <span class="season">여름</span>
+        <ul>
+          <li><b>부산바다축제</b><span>해수욕장 곳곳에서 공연과 해변 프로그램.</span></li>
+          <li><b>해수욕장 야간 개장</b><span>일부 해변은 밤까지 물놀이가 가능해요.</span></li>
+        </ul>
+      </article>
+      <article class="card bg-lilac fest">
+        <span class="season">가을</span>
+        <ul>
+          <li><b>부산국제영화제</b><span>10월, 영화의전당과 해운대 일대.</span></li>
+          <li><b>부산불꽃축제</b><span>광안대교를 배경으로 한 대형 불꽃놀이.</span></li>
+          <li><b>동래읍성 역사축제</b><span>동래 옛 성곽 일대의 역사 재현 행사.</span></li>
+          <li><b>G-STAR</b><span>11월, 벡스코에서 열리는 게임 전시회.</span></li>
+        </ul>
+      </article>
+      <article class="card bg-white fest">
+        <span class="season">겨울</span>
+        <ul>
+          <li><b>광복로 겨울빛 트리축제</b><span>중구 광복로 거리가 조명으로 채워져요.</span></li>
+          <li><b>해운대 빛축제</b><span>구남로와 해변을 잇는 빛 조형물.</span></li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- PLANNER -->
+  <section class="container" id="planner">
+    <div class="card bg-plum plan split">
+      <div class="split-a">
+        <h2 class="plan-title">코스<br>추천기</h2>
+        <p class="pop-sub">테마와 기간을 고르면 동네끼리 묶어서<br>아침·오후·저녁 동선을 만들어 드려요.</p>
+      </div>
+      <form class="card bg-lilac plan-form split-b" id="planner-form">
+        <h3>어떤 부산을 원하세요?</h3>
+        <fieldset>
+          <legend class="field-legend">테마 (여러 개 선택 가능)</legend>
+          <div class="check-grid" id="planner-themes"></div>
+        </fieldset>
+        <label class="field">기간
+          <select name="days">
+            <option value="1">당일치기</option>
+            <option value="2" selected>1박 2일</option>
+            <option value="3">2박 3일</option>
+          </select>
+        </label>
+        <button type="submit" class="btn-plum">코스 만들기</button>
+      </form>
+      <div class="plan-result" id="plan-result" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <!-- USEFUL INFO -->
+  <section class="container">
+    <div class="section-head"><h2>알아두면 좋은 정보</h2></div>
+    <div class="info-grid">
+      <article class="card bg-white info">
+        <h3>교통</h3>
+        <ul>
+          <li>지하철은 교통카드 한 장으로 버스와 환승돼요.</li>
+          <li>해운대·기장 쪽은 동해선이 빨라요.</li>
+          <li>언덕 마을(감천, 영도)은 마을버스를 이용하면 체력을 아낄 수 있어요.</li>
+        </ul>
+      </article>
+      <article class="card bg-white info">
+        <h3>걷기</h3>
+        <ul>
+          <li>이기대 해안산책로는 편도 약 5km, 2시간 정도 잡으세요.</li>
+          <li>감천문화마을은 내리막 방향으로 걷는 게 편해요.</li>
+          <li>여름 한낮 해안길은 그늘이 적어요. 물을 꼭 챙기세요.</li>
+        </ul>
+      </article>
+      <article class="card bg-white info">
+        <h3>문의처</h3>
+        <ul>
+          <li><b>관광 안내</b> 1330 (외국어 통역 포함)</li>
+          <li><b>부산시 민원 대표</b> 051-120</li>
+          <li><b>공식 정보</b> <a href="https://www.visitbusan.net" target="_blank" rel="noopener">visitbusan.net</a></li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="container">
+    <div class="card bg-cream newsletter">
+      <div>
+        <h2>한 달에 한 번, 부산 소식</h2>
+        <p>새로 생긴 동네 가게와 다음 달 축제를 메일로 보내드려요.</p>
+      </div>
+      <form class="nl-form" id="nl-form" novalidate>
+        <label class="sr-only" for="nl-email">이메일</label>
+        <input id="nl-email" type="email" required placeholder="you@example.com">
+        <button class="btn-plum" type="submit">구독하기</button>
+        <p class="form-msg" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="container footer">
+  <div class="card bg-white footer-in">
+    <a class="logo" href="index.html">Local Lab</a>
+    <p>장소 정보는 방문 전에 운영 여부를 확인해 주세요. 날씨: Open-Meteo · 사진: Unsplash</p>
+    <p class="muted">© 2026 Local Lab · local-lab.app</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script src="data.js"></script>
+<script src="busan.js"></script>
+</body>
+</html>

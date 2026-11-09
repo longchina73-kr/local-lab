@@ -1,0 +1,11 @@
+.claude
+.wrangler
+.git
+node_modules
+scripts
+wrangler.jsonc
+.assetsignore
+.gitignore
+.gitattributes
+CLAUDE.md
+DEPLOYS.md

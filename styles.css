@@ -99,7 +99,7 @@ section.container { margin-top: var(--gap); }
 .hero-art { padding: 0; overflow: hidden; position: relative; min-height: 440px; }
 .hero-art > svg { position: absolute; inset: 0; width: 100%; height: 100%; }
 .photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
-.hero-art .photo { object-position: 50% 35%; } /* 두 사람 얼굴이 사진 40% 높이쯤이라 살짝 위를 기준으로 자름 */
+.hero-art .photo { object-position: 50% 85%; } /* 두 사람 다리까지 보이게 아래쪽을 기준으로 자름 (PC 에선 맨 위 표지판·다리 야경이 일부 잘림) */
 .hero-badge { position: absolute; right: 18px; bottom: 18px; left: auto; display: flex; gap: 10px; align-items: center; background: var(--white); border-radius: 16px; padding: 10px 16px; font-size: 13px; line-height: 1.35; max-width: calc(100% - 36px); }
 .hero-badge svg { width: 28px; height: 28px; flex: none; }
 .hero-cta { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 20px 28px; min-height: 64px; font-family: var(--display); font-weight: 700; font-size: clamp(18px, 2vw, 22px); text-decoration: none; transition: background .2s; }
@@ -497,6 +497,7 @@ input[type="checkbox"] { width: 20px; height: 20px; flex: none; accent-color: va
   .footer-cols { grid-template-columns: 1fr 1fr; }
   .check-grid { grid-template-columns: 1fr 1fr; }
   .weather, .hero-badge { left: 12px; right: 12px; bottom: 12px; max-width: none; }
+  .hero-badge { top: 12px; bottom: auto; } /* 사진 아래쪽(두 사람 다리)을 가리지 않게 위로 */
 }
 
 /* 접힌 폴더블 커버 화면 · 아주 좁은 화면 (359px 이하, 갤럭시 폴드 커버 280~344px 포함) */

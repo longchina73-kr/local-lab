@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#dde9fb">
+  <title>숙소로 찾기 · Local Lab</title>
+  <meta name="description" content="머무는 숙소를 고르면 걸어갈 수 있는 부산의 명소와 맛집을 지도로 보여드려요.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='9' fill='%235b1236'/><circle cx='16' cy='14' r='6' fill='%23fff6c7'/><path d='M4 26 L12 18 L18 23 L23 19 L28 26Z' fill='%23e9c9ff'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Gaegu:wght@700&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="map-page stay-page">
+
+<header class="nav-wrap">
+  <nav class="nav">
+    <a class="logo" href="index.html" aria-label="Local Lab 홈">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="14" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M16 2 C9 10 9 22 16 30 M16 2 C23 10 23 22 16 30 M3 12 H29 M3 20 H29" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+      Local Lab
+    </a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="menu" aria-label="메뉴 열기">
+      <span></span><span></span>
+    </button>
+    <ul class="menu" id="menu">
+      <li><a href="busan.html">부산 가이드</a></li>
+      <li><a href="map.html">가이드맵</a></li>
+      <li><a href="#stays">숙소 목록</a></li>
+      <li><a href="busan.html#planner" class="pill">코스 추천</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="top">
+
+  <section class="container">
+    <div class="card bg-sky map-title">
+      <div>
+        <p class="map-kicker">숙소에서 한 걸음</p>
+        <h1><span class="chip-mini">부산</span> 숙소로 찾는<br><span class="map-big">동네 지도</span></h1>
+      </div>
+      <p class="map-intro">머무는 숙소를 고르면<br>걸어서 갈 수 있는 <b>명소</b>와 <b>맛집</b>을 지도에 띄워 드려요.<br>거리를 바꾸면 범위가 넓어져요.</p>
+    </div>
+  </section>
+
+  <!-- 숙소 고르기 -->
+  <section class="container" id="stays">
+    <div class="section-head"><h2>어디에 머무세요?</h2><p class="muted">Local Lab 제휴 숙소예요</p></div>
+    <ul class="stay-list" id="stay-list"></ul>
+  </section>
+
+  <!-- 지도 + 주변 목록 -->
+  <section class="container">
+    <div class="map-layout split">
+      <div class="card map-card split-a">
+        <div id="map" role="region" aria-label="숙소 주변 지도"></div>
+
+        <article class="place-card" id="place-card" hidden aria-live="polite">
+          <button class="pc-close" type="button" aria-label="설명창 닫기">×</button>
+          <img class="pc-photo" id="pc-photo" alt="" hidden>
+          <div class="pc-head">
+            <span class="pc-num" id="pc-num"></span>
+            <div>
+              <h2 id="pc-name"></h2>
+              <p class="pc-area" id="pc-area"></p>
+            </div>
+          </div>
+          <p class="pc-desc" id="pc-desc"></p>
+          <p class="pc-meta" id="pc-meta"></p>
+          <a class="pill pc-link" id="pc-link" target="_blank" rel="noopener">네이버지도에서 보기</a>
+        </article>
+
+        <button class="map-reset" id="map-reset" type="button">숙소로 돌아가기</button>
+      </div>
+
+      <aside class="map-side split-b">
+        <div class="card bg-white stay-info" id="stay-info"></div>
+
+        <div class="card bg-white nearby">
+          <div class="nb-tabs" role="tablist" aria-label="무엇을 찾을까요">
+            <button type="button" role="tab" class="nb-tab is-on" data-kind="sight" aria-selected="true">🏞️ 명소</button>
+            <button type="button" role="tab" class="nb-tab" data-kind="food" aria-selected="false">🍽️ 맛집</button>
+          </div>
+          <div class="chips nb-radius" id="nb-radius" aria-label="거리">
+            <button type="button" class="chip" data-r="500">500m</button>
+            <button type="button" class="chip is-on" data-r="1000">1km</button>
+            <button type="button" class="chip" data-r="2000">2km</button>
+            <button type="button" class="chip" data-r="3000">3km</button>
+          </div>
+          <p class="muted nb-status" id="nb-status" aria-live="polite"></p>
+          <ol class="nb-list" id="nb-list"></ol>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+</main>
+
+<footer class="container footer">
+  <div class="card bg-white footer-in">
+    <a class="logo" href="index.html">Local Lab</a>
+    <p>거리는 직선거리예요. 방문 전 운영 시간을 확인해 주세요.</p>
+    <p class="muted"><span id="map-credit">지도</span> · 관광정보: 한국관광공사 TourAPI</p>
+  </div>
+</footer>
+
+<script src="config.js"></script>
+<script src="script.js"></script>
+<script src="data.js"></script>
+<script src="stays.js"></script>
+<script src="mapkit.js"></script>
+<script src="stay.js"></script>
+</body>
+</html>

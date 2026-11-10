@@ -28,5 +28,9 @@ powershell -ExecutionPolicy Bypass -File scripts/rollback.ps1
 
 ## 구조
 - `index.html`, `busan.html`, `map.html`, `styles.css`, `script.js`, `busan.js`, `map.js`, `data.js`(장소·코스 데이터 공용), `assets/`
-- `wrangler.jsonc`: 배포 설정, `.assetsignore`: 업로드 제외 목록
+- 사이트 핵심 컨셉: **제휴 숙소를 고르면 그 주변 명소·맛집을 지도에 보여준다** → `stay.html` + `stay.js`, 숙소 목록은 `stays.js`
+- 지도: `mapkit.js` 어댑터. `config.js`의 `naverMapKeyId`(네이버 클라우드 Maps Client ID, 공개값)가 있으면 네이버 지도, 없거나 인증 실패면 OSM(Leaflet)
+- 주변 장소: `worker/index.js`의 `/api/nearby`가 한국관광공사 TourAPI(KorService2 locationBasedList2)를 대신 호출. 키는 Worker secret `TOURAPI_KEY`(사용자가 직접 `npx wrangler secret put TOURAPI_KEY`). API 실패 시 `data.js` 큐레이션 장소로 대체
+- `wrangler dev`는 이 노트북에서 workerd가 안 떠서(VC++ 런타임) 못 씀 → Worker는 Node로 따로 시험, 페이지는 serve.ps1로 확인
+- `wrangler.jsonc`: 배포 설정(`main` Worker + assets, `/api/*`만 Worker 먼저), `.assetsignore`: 업로드 제외 목록
 - 로컬 미리보기: `.claude/serve.ps1 -Port 5174`

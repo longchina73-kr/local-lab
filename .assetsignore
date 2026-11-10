@@ -3,6 +3,8 @@
 .git
 node_modules
 scripts
+worker
+.dev.vars
 wrangler.jsonc
 .assetsignore
 .gitignore
